@@ -1,11 +1,9 @@
 import Head from "next/head";
 import React from "react";
-import Header from "../components/Header";
 import Banner from "../components/Banner";
 import SmallCard from "./../components/SmallCard";
 import MediumCard from "../components/MediumCard";
 import LargeCard from "../components/LargeCard";
-import Footer from "../components/Footer";
 export default function Home({ exploreData, cardsData }) {
   return (
     <div className="">
@@ -13,9 +11,7 @@ export default function Home({ exploreData, cardsData }) {
         <title>XiaoYun Airbnb</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header></Header>
-
-      <Banner></Banner>
+      <Banner />
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
         <section className="pt-6">
           <h2 className="text-4xl font-semibold pb-5">Explore nearby</h2>
@@ -32,7 +28,7 @@ export default function Home({ exploreData, cardsData }) {
         </section>
         <section>
           <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
-          <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
+          <div className="flex space-x-3 overflow-x-scroll scrollbar-hide p-3 -ml-3">
             {cardsData?.map(({ img, title }) => (
               <MediumCard key={img} img={img} title={title} />
             ))}
@@ -45,7 +41,6 @@ export default function Home({ exploreData, cardsData }) {
           buttonText="Get Inspired"
         />
       </main>
-      <Footer />
     </div>
   );
 }
