@@ -19,7 +19,6 @@ function Header() {
     key: "Selection",
   };
   const handleSelect = (ranges) => {
-    console.log(ranges);
     setStartDate(ranges.Selection.startDate);
     setEndDate(ranges.Selection.endDate);
   };
