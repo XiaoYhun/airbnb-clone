@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { HeartIcon } from "@heroicons/react/outline";
 import { StarIcon } from "@heroicons/react/solid";
-function InfoCard({ img, location, title, description, star, price, total }) {
+function InfoCard({ id, img, location, title, description, star, price, total, onMouseHover }) {
   return (
-    <div className="flex py-7 px-2 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition transform duration-200 ease-out first:border-t">
+    <div
+      className="flex py-7 px-2 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition transform duration-200 ease-out first:border-t"
+      onMouseOver={onMouseHover}
+    >
       <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0 rounded-xl overflow-hidden">
         <Image src={img} layout="fill" objectFit="cover" />
       </div>
@@ -21,8 +24,8 @@ function InfoCard({ img, location, title, description, star, price, total }) {
             {star}
           </p>
           <div>
-            <p className="text-lg font-semibold lg:text-2xl">{price}</p>
-            <p className="text-right font-extralight">{total}</p>
+            <p className="inline text-lg font-semibold lg:text-2xl">{price} </p>
+            <small className="text-lg">/night</small>
           </div>
         </div>
       </div>
